@@ -103,32 +103,127 @@ header .navigation a:hover {
   background: #0c4f60;
 }
 
-.media-icons{
+.media-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.media-icons a {
+  position: relative;
+  color: #111;
+  font-size: 25px;
+  transition: 0.3s;
+  transition-property: transform;
+}
+
+.media-icons a:not(:last-child) {
+  margin-right: 60px;
+}
+
+.media-icons a:hover {
+  transform: scale(1.5);
+}
+label {
+  display: none;
+}
+
+#check {
+  z-index: 3;
+  display: none;
+}
+
+/* Responsive styles */
+
+@media (max-width: 960px) {
+  header .navigation {
+    display: none;
+  }
+
+  label {
+    display: block;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    transition-property: color;
+  }
+
+  label:hover {
+    color: #fff;
+  }
+
+  label .close-btn {
+    display: none;
+  }
+
+  #check:checked ~ header .navigation {
+    z-index: 2;
+    position: fixed;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    background: rgba(114, 223, 255, 0.9);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  #check:checked ~ header .navigation a {
+    margin-right: 0;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+
+  #check:checked ~ header label .menu-btn {
+    display: none;
+  }
+
+  #check:checked ~ header label .close-btn {
+    display: block;
+    position: fixed;
+    z-index: 2;
+  }
+
+  label .menu-btn {
+    display: absolute;
+  }
+
+  header .logo {
+    position: absolute;
+    bottom: -6px;
+  }
+
+  .content .info h2 {
+    font-size: 45px;
+    line-height: 50px;
+  }
+
+  .content .info h2 span {
+    font-size: 40px;
+    font-weight: 600;
+  }
+
+  .content .info p {
+    font-size: 14px;
+  }
 }
 
-.media-icons a{
-    position: relative;
-    color: #111;
-    font-size: 25px;
-    transition: .3s;
-    transition-property: transform;
-}
+@media (max-width: 560px) {
+  .content .info h2 {
+    font-size: 35px;
+    line-height: 40px;
+  }
 
-.media-icons a:not(:last-child){
-    margin-right: 60px;
-}
+  .content .info h2 span {
+    font-size: 30px;
+    font-weight: 600;
+  }
 
-.media-icons a:hover{
-    transform: scale(1.5);
+  .content .info p {
+    font-size: 14px;
+  }
 }
- label{
-     display: none;
- }
-
- #check{
-     z-index: 3;
- }
