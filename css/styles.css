@@ -134,7 +134,7 @@ label {
   display: none;
 }
 
-/* Responsive styles */
+/* Responsive Styles */
 
 @media (max-width: 960px) {
   header .navigation {
@@ -160,22 +160,22 @@ label {
   #check:checked ~ header .navigation {
     z-index: 2;
     position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background: rgba(114, 223, 255, 0.9);
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   #check:checked ~ header .navigation a {
+    font-weight: 700;
     margin-right: 0;
     margin-bottom: 50px;
     letter-spacing: 2px;
-    font-weight: 700;
   }
 
   #check:checked ~ header label .menu-btn {
@@ -183,13 +183,13 @@ label {
   }
 
   #check:checked ~ header label .close-btn {
+    z-index: 2;
     display: block;
     position: fixed;
-    z-index: 2;
   }
 
   label .menu-btn {
-    display: absolute;
+    position: absolute;
   }
 
   header .logo {
